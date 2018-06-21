@@ -1,0 +1,80 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div>
+  <h1> RATE MY CAKES! </h1>
+  name: {{ new_Cake.name }} imgurl: {{ new_Cake.imgurl}}
+  <hr>
+  <div class="create">
+    <form (submit)="createCake()">
+      <h4>submit a cake to be rated</h4>
+      <!-- <p>{{ newTask | json }}</p> -->
+      Baker Name:
+      <br>
+      <input [(ngModel)]="new_Cake.name" name='new_Cake.name' type="text">
+      <br>
+      <br> Img Url
+      <br>
+      <input [(ngModel)]="new_Cake.imgurl" name='new_Cake.imgurl' type="text">
+      <br>
+      <input type="submit" value="submit" />
+    </form>
+  </div>
+  <!-- rate all cakes -->
+  <div *ngIf="allcakes" class="getallcakes">
+    <div *ngFor="let cake of allcakes" class="forcakes">
+
+      id: {{cake._id}}
+      <br> baked by
+      <b>{{cake.name }}</b>
+      <br>
+      <div class="image">
+        <img (click)="showMeTheCakeDiv(cake)" src="{{ cake.imgurl }}" alt="" height="200px" />
+      </div>
+
+      <div class="rate_cakes">
+
+
+
+        <form (submit)="onSubmit_comment(cake._id, new_comment, myform)" #myform="ngForm">
+            == rating: {{ new_comment.rating }} comment: {{ new_comment.comment}}<br>
+            {{ new_comment | json }}
+          <br> RATING:
+          <select ngModel name="rating">
+            <option value="5">5</option>
+            <option value="4">4</option>
+            <option value="3">3</option>
+            <option value="2">2</option>
+            <option value="1">1</option>
+          </select>
+          <br>
+          <input type='text' ngModel name="comment" id="" cols="30" rows="5" placeholder="type your comment here">
+          <br>
+          <input type="submit" value="rate cake" id="">
+        </form>
+
+        <!-- <form (submit)="onSubmit_comment(cake._id, new_comment)">
+            == rating: {{ new_comment.rating }} comment: {{ new_comment.comment}}<br>
+            {{ new_comment | json }}
+          <br> RATING:
+          <select [(ngModel)]="new_comment.rating" name="new_comment.rating">
+            <option value="5">5</option>
+            <option value="4">4</option>
+            <option value="3">3</option>
+            <option value="2">2</option>
+            <option value="1">1</option>
+          </select>
+          <br>
+          <input type='text' [(ngModel)]="new_comment.comment" name="new_comment.comment" id="" cols="30" rows="5" placeholder="type your comment here">
+          <br>
+          <input type="submit" value="rate cake" id="">
+        </form> -->
+
+        <hr>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <app-viewcake *ngIf="oneCake" [oneCake]="clicked_cake" class="info"></app-viewcake>

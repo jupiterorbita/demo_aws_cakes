@@ -1,0 +1,14 @@
+<div class="info">
+    <img src="{{ oneCake.imgurl }}" alt="" height="200px">
+    <div class="inside">
+
+      <h4>baked by {{ oneCake.name}}</h4>
+      avg rating = {{ avg_rate }}
+      <div class="comments">
+        <li *ngFor='let rating of oneCake.rating'>
+           comment: {{ rating.comment }} <br>
+           rating: {{rating.rating}}
+         </li>
+      </div>
+    </div>
+  </div>

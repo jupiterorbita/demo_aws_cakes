@@ -1,0 +1,58 @@
+div.create{
+    width: 200px;
+    display: inline-block;
+    vertical-align: top;
+    border: 2px solid orange;
+    border-radius: 3px;
+    text-align:center
+}
+div.getallcakes{
+    width: 350px;
+    min-height: 120px;
+    display: inline-block;
+    vertical-align: top;
+    border: 2px solid blue;
+    border-radius: 3px;
+    padding-left: 20px;
+    margin-left: 20px;
+}
+    div.image{
+        display: inline-block;
+        vertical-align: top;
+        /* border: 1px dotted red; */
+    }
+    div.rate_cakes{
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    div.info{
+        width: 440px;
+        height: 200px;
+        display: inline-block;
+        vertical-align: top;
+        border: 2px solid rgb(0, 255, 64);
+        border-radius: 3px;
+        padding-left: 20px;
+        margin-left: 20px;
+    }
+img, h4{
+    display: inline-block;
+    vertical-align: top;
+}
+div.inside{
+    border: 1px dotted red;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 20px;
+}
+.comments{
+    border: 2px dotted red;
+}
+/* div.forcakes{
+    outline: 1px dotted gray;
+} */
+/* .viewcakeborder{
+    border: 2px solid greenyellow;
+    border-radius: 4px;
+} */
